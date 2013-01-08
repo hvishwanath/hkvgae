@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block pagescripts %}
+	{{ super() }}
+	<script src="https://www.google.com/jsapi?key=ABQIAAAA3QXSDerD9Sq6I4MuL1KZSRQ24xWpDJrAmEI6IIdUlfp1fKxy-BRX1YIIBxLjdx3vy_MLDEP7WsvOdQ" type="text/javascript"></script>
+	<script type="text/javascript" src="/js/rssdisplayer.js"></script>
+
+{% endblock %}
+{% block content %}
+<h4>Few recent entries...</h4>
+<br>
+	<script type="text/javascript">
+		//USAGE SYNTAX: new rssdisplayer("divid", "rssurl", numberofitems, "displayoptions")
+		new rssdisplayer("msndiv", "http://blog.hvishwanath.net/feeds/posts/default", 5, "date, snippet")
+	</script>
+
+	<br>
+	<br>
+	<h4>
+		Full blog <a href='http://blog.hvishwanath.net' target='_blank'>here.</a>
+	</h4>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+application: hkvgae
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /css
+  static_dir: css
+  
+- url: /js
+  static_dir: js
+
+- url: /images
+  static_dir: images
+
+- url: /downloads
+  static_dir: downloads
+  
+- url: /.*
+  script: hkvgae.application
+
+  
+libraries:
+- name: jinja2
+  version: latest

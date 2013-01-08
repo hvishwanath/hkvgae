@@ -1,0 +1,169 @@
+<!--
+____________________________________________________________
+|                                                            |
+|    DESIGN + Pat Heard { http://fullahead.org }             |
+|      DATE + 2006.03.19                                     |
+| COPYRIGHT + Free use if this notice is left in place       |
+|____________________________________________________________|
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+
+	<head>
+
+		{% block title %}
+		<title>Harish Vishwanath | Home</title>
+		{% endblock %}
+
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+		<meta name="google-site-verification" content="ZyTJgWTh3Ux-uqMziWAkvn-8_tFAgCUz0fMABWI34ig" />
+		<meta name="author" content="Harish Vishwanath" />
+		<meta name="keywords" content="Harish, Harish Vishwanath, hvishwanath, hvishwanath blog, Harish blog, Harish Vishwanath blog, Harish Vishwanath personal web site" />
+		<meta name="description" content="Harish Vishwanath's Personal Website" />
+		<meta name="robots" content="index, follow, noarchive" />
+		<meta name="googlebot" content="noarchive" />
+
+		{% block head %}
+		<link rel="stylesheet" type="text/css" href="/css/html.css" media="screen, projection, tv " />
+		<link rel="stylesheet" type="text/css" href="/css/layout.css" media="screen, projection, tv" />
+		<link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+		<script type="text/javascript" src="/js/jQuery.js"></script>
+		<!--
+		<script type="text/javascript" src="/js/twitterwidget.js"></script>
+		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+
+		-->
+		{% endblock %}
+
+		<script>
+			$(document).ready(function() {
+				$("#{{ pageid }}").addClass('here')
+			});
+		</script>
+
+		{%block pagescripts%}
+		{%endblock%}
+	</head>
+
+	<body>
+
+		<!-- CONTENT: Holds all site content except for the footer.  This is what causes the footer to stick to the bottom -->
+		<div id="content">
+
+			<!-- HEADER: Holds title, subtitle and header images -->
+			<div id="header">
+
+				<div id="title">
+					<h1>Harish Vishwanath</h1>
+					<h2>An explorer</h2>
+				</div>
+
+				<img src="images/hkvsmall.jpg" alt="left slice" class="left" />
+
+			</div>
+
+			<!-- MAIN MENU: Top horizontal menu of the site.  Use class="here" to turn the current page tab on -->
+			<div id="mainMenu">
+
+				<ul class="floatRight">
+					<li>
+						<a href="/" id='about' title="about">about</a>
+					</li>
+					<li>
+						<a href="/blog" id='blog' title="blog">blog</a>
+					</li>
+					<li>
+						<a href="/pulse" id='pulse' title="pulse">pulse</a>
+					</li>
+					<li>
+						<a href="/cv" id='cv' title="cv">cv</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- PAGE CONTENT BEGINS: This is where you would define the columns (number, width and alignment) -->
+			<div id="page">
+
+				<!-- 75 percent width column, aligned to the right -->
+				<div class="width100 floatRight">
+
+					<!-- Gives the gradient block -->
+					<div class="gradient">
+
+						{% block content %}
+
+						<a name="fluidity"></a>
+						<h1>Total Items : {{ totalItems }}</h1>
+						<h1>Dynamic Template</h1>
+						<h2>Taken from the book of <a href="http://openwebdesign.org/viewdesign.phtml?id=2514" title="View template">fluidity</a>, this template is exceptionally easy to customize using re-useable CSS classes.</h2>
+
+						<p>
+							This template quickly and easily allows for one, two, three or even four column layouts.  This is done with simple <acronym title="Cascading Style Sheet">CSS</acronym> classes that can be used over and over again.  To learn more about it, follow <a href="help.html" title="View help">this link</a>.  The template itself is valid <acronym title="eXtensible Hypertext Markup Language">XTHML</acronym> 1.0 strict and <i>almost</i> valid CSS.  The almost is added in there because CSS expressions were used.  You can read more about that <a href="#expressions" title="Read about CSS expressions">here</a>.
+						</p>
+
+						<blockquote class="go">
+							<p>
+								This template doesn't use fixed columns.  With a few simple CSS classes you can quickly change the appearance. <a href="help.html" title="View help">Click here</a> to learn how.
+							</p>
+						</blockquote>
+
+						<p>
+							Since this template is fluid width and the font sizes are defined relatively, you can <b>change font size without breaking the layout</b>.  The fluid width also means that people with higher resolutions aren't constrained.
+						</p>
+
+						<p>
+							Total size of the images used is just under 25 <acronym title="kilobytes">kb</acronym>, so that's good news to all the dial-up users.  The code behind the template is semantically written which means that it is widely supported.  As for the browsers, it displays consistently in the usual suspects:
+						</p>
+
+						<ul>
+							<li>
+								<b>Firefox</b> of course
+							</li>
+							<li>
+								<b>Opera</b> sure, why not
+							</li>
+							<li>
+								<b>Netscape</b> like firefox's less attractive cousin at the dance
+							</li>
+							<li>
+								<b>Internet Explorer</b> ...
+							</li>
+							<li>
+								<b>Safari</b> cause macs are computers too
+							</li>
+						</ul>
+
+						{% endblock %}
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- FOOTER: Site footer for links, copyright, etc. -->
+		<div id="footer">
+			<div class="gradient">
+				
+			</div>
+			<div id="width">
+				<span class="floatLeft"> Copyright&copy Harish Vishwanath </span>
+				<span><a href='https://twitter.com/hvishwanath' target="_blank"> <div class='contactpane'><div id='twitter'></div> </div></a></span>
+				<span><a href='http://in.linkedin.com/in/harishvishwanath' target="_blank"> <div class='contactpane'><div id='linkedin'></div> </div> </a></span>
+				<span><a href='https://plus.google.com/109577603191081689933' target="_blank"> <div class='contactpane'><div id='gplus'></div> </div> </a></span>
+				<span><a href='http://www.facebook.com/hvishwanath' target="_blank"> <div class='contactpane'><div id='fb'></div> </div> </a></span>
+				
+				<span class="floatRight"> Powered by Google App Engine </span>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
