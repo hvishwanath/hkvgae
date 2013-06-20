@@ -12,22 +12,22 @@ class MainPage(webapp.RequestHandler):
     
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
-        url = 'https://www.googleapis.com/books/v1/users/115635621284467092412/bookshelves/4/volumes?key=AIzaSyB88fqZ8mHe6R3HPg7V8IcHPQ3TcjNWp-U'
-        
-        #Try to make a rest call
-        totalItems = -1
-        u = urllib2.urlopen(url)
-        if u.code == 200:
-            d = json.load(u)
-            totalItems = d['totalItems']
-        
-        templateValues = {'totalItems' : totalItems,
-                          'pageid' : 'about'
-                          }
+#        url = 'https://www.googleapis.com/books/v1/users/115635621284467092412/bookshelves/4/volumes?key=AIzaSyB88fqZ8mHe6R3HPg7V8IcHPQ3TcjNWp-U'
+#        
+#        #Try to make a rest call
+#        totalItems = -1
+#        u = urllib2.urlopen(url)
+#        if u.code == 200:
+#            d = json.load(u)
+#            totalItems = d['totalItems']
+#        
+#        templateValues = {'totalItems' : totalItems,
+#                          'pageid' : 'about'
+#                          }
         
         template = jinjaEnvironment.get_template('index.html')
 
-        self.response.out.write(template.render(templateValues))
+        self.response.out.write(template.render({}))
 
 class BlogPage(webapp.RequestHandler):
     
